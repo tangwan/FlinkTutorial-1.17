@@ -15,7 +15,7 @@ import org.apache.flink.util.Collector;
 import java.time.Duration;
 
 /**
- * TODO 检测每种传感器的水位值，如果连续的两个水位值超过10，就输出报警
+ * 检测每种传感器的水位值，如果连续的两个水位值超过10，就输出报警
  *
  * @author cjp
  * @version 1.0
@@ -54,9 +54,9 @@ public class KeyedValueStateDemo {
 
                             @Override
                             public void processElement(WaterSensor value, Context ctx, Collector<String> out) throws Exception {
-                                //lastVcState.value();  // 取出 本组 值状态 的数据
-                                //lastVcState.update(); // 更新 本组 值状态 的数据
-                                //lastVcState.clear();  // 清除 本组 值状态 的数据
+                                // lastVcState.value();  // 取出 本组 值状态 的数据
+                                // lastVcState.update(); // 更新 本组 值状态 的数据
+                                // lastVcState.clear();  // 清除 本组 值状态 的数据
 
                                 // 1. 取出上一条数据的水位值(Integer默认值是null，判断)
                                 int lastVc = lastVcState.value() == null ? 0 : lastVcState.value();
